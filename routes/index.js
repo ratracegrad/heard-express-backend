@@ -47,7 +47,7 @@ router.post('/transactions/create', async function(req, res, next) {
 });
 
 /* UPDATE TRANSACTION */
-router.post('/transactions/update', async function(req, res, next) {
+router.put('/transactions/update', async function(req, res, next) {
   const supabase = createClient(supabaseUrl, supabaseKey);
   const { data, error } = await supabase
   .from('transactions')
@@ -69,7 +69,7 @@ router.post('/transactions/update', async function(req, res, next) {
 });
 
 /* DELETE TRANSACTION */
-router.post('/transactions/delete', async function(req, res, next) {
+router.delete('/transactions/delete', async function(req, res, next) {
   const supabase = createClient(supabaseUrl, supabaseKey);
   const { data, error } = await supabase
   .from('transactions')
